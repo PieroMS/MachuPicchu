@@ -1,0 +1,27 @@
+@import 'responsive';
+@mixin boton(){
+    border: .125rem solid map-get($color,'second');
+    border-radius: .3125rem;
+    background-color: transparent;
+    display: inline-block;
+    transition: all .4s;
+}
+@mixin contBoton(){
+    cursor: pointer;
+    display: block;
+    padding: .625rem 1.25rem;
+    @include letra(1rem,400,.0625rem);
+}
+.btn{
+    @include boton();
+}
+.a__btn{
+    @include contBoton();
+    @include responsive(750px){
+        padding: .5rem .75rem;
+        @include letra(.875rem,400,.0625rem);
+    };
+}
+.btn:hover{
+    transform: scale(1.06);
+}

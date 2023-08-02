@@ -1,0 +1,408 @@
+@import 'src/reset';
+@import 'src/font';
+@import 'src/flex__grid';
+@import 'src/btn';
+@import 'src/responsive';
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(19, 32, 25, 0.6),rgba(19, 32, 25, 0.6)),url(../image/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.navbar{
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(1.5625rem);
+    @include flex(flex,row,wrap,center,center);
+    padding: 1rem 3rem;
+    position: fixed;
+    z-index: 99;
+    @include responsive(750px){
+        padding: 1rem 2rem;
+    };
+    @include responsive(530px){
+        @include flex(flex,row,wrap,end,center);
+    };
+}
+.button{
+    background-color: transparent;
+    border: none;
+    display: none;
+    @include responsive(530px){
+        display: block;
+        cursor: pointer;
+    };
+}
+.img{
+    width: 1.5625rem;
+    height: 1.5625rem;
+}
+.ul{
+    @include flex(flex,row,nowrap,end,center);
+    @include responsive(530px){
+        flex-direction: column
+    };
+}
+.li__items{
+    margin: 0 .9375rem;
+    @include responsive(750px){
+        margin: 0 .625rem;
+    };
+    @include responsive(530px){
+        margin: .9375rem 0
+    };
+}
+.a__items{
+    font-weight: 400;
+    transition: all .4s;
+}
+.a__items:hover{
+    color: map-get($color,'second');
+}
+/*responsive*/
+.nav{
+    @include responsive(530px){
+        width: 100%;
+        height: 0;
+        @include flex(flex,column,nowrap,center,center);
+        overflow: hidden;
+        pointer-events: none;
+        transition: all .5s ease;
+    };
+}
+.nav.active{
+    @include responsive(530px){
+        height: 70vh;
+        pointer-events: auto
+    };
+}
+/*HEADER__CONTENT*/
+span{
+    color: map-get($color,'second');
+    display: block;
+}
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.h1__content,.div__button{
+    margin: .9375rem 0;
+}
+/*HEADER__ICONS*/
+.icons{
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+    @include flex(flex,column,nowrap,center,center);
+    @include responsive(530px){
+        display: none
+    };
+}
+.a__icons{
+    margin: .625rem 0;
+    transition: all .4s;
+}
+.img__icons{
+    width: 1.4rem;
+    height: 1.4rem;
+    @include responsive(750px){
+        width: 1rem;
+        height: 1rem;
+    };
+}
+.a__icons:hover{
+    transform: translateX(25%);
+}
+/*MAIN*/
+.section{
+    padding: 5rem 12%;
+}
+/*SECTION__DESTINATION*/
+.destination{
+    background-color: map-get($color,'bk_2');
+}
+.h2__destination,.p__destinations{
+    text-align: center;
+    margin: 1.25rem 0;
+}
+.p__destinations{
+    margin-bottom: 3.125rem;
+}
+.h3__card{
+    text-align: center;
+}
+.h3__card,.p__card{
+    margin: 1rem 0;
+}
+.div__cards{
+    @include grid(grid,4,2rem);
+    @include responsive(1100px){
+        @include grid(grid,2,1rem);
+    };
+    @include responsive(680px){
+        @include grid(grid,1,1rem);
+    };
+}
+.h3__card{
+    @include responsive(960px){
+        font-size: 1.1875rem;
+    }
+}
+.p__card{
+    @include responsive(960px){
+        font-size: .875rem;
+    }
+}
+.figure__card{
+    max-width: 100%;
+    height: auto;
+    border-radius: .625rem;
+    display: block;
+    margin: 0 auto;
+    @include responsive(1100px){
+        max-width: 80%;
+    };
+    @include responsive(680px){
+        max-width: 70%;
+    };
+}
+.img__card{
+    width: 100%;
+    border-radius: .625rem;
+    object-fit: cover;
+    transition: all .4s;
+}
+.img__card:hover{
+    box-shadow: 0 0 .5rem rgb(185, 255, 44),
+    0 0 .5rem rgb(185, 255, 44),
+    0 0 .5rem rgb(185, 255, 44),
+    0 0 .5rem rgb(185, 255, 44);
+}
+/*SECTION__INFO*/
+.info{
+    background-color: map-get($color,'bk_1');
+}
+.h2__info{
+    text-align: center;
+    margin-bottom: 3.125rem;
+}
+.div__icons{
+    @include grid(grid,4,1rem);
+    text-align: center;
+    margin: 1.25rem 0 5rem 0;
+    @include responsive(600px){
+        @include grid(grid,2,1rem);
+    };
+}
+.img__icon__content{
+    width: 3.75rem;
+    height: 3.75rem;
+    margin: 1.875rem;
+    transition: all .4s;
+    @include responsive(960px){
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: .9375rem;
+    };
+}
+.icon__content:hover .img__icon__content{
+    transform: translateY(-10%);
+}
+.button__info{
+    display: block;
+    margin: 1.25rem auto;
+    text-align: center;
+    width: 9.375rem;
+    @include responsive(320px){
+        width: 7.5rem
+    };
+}
+/*SECTION__TOUR*/
+.tour{
+    background-color: map-get($color,'bk_2');
+}
+.h2__tours{
+    text-align: center;
+    margin-bottom: 1.875rem
+}
+.content__grid{
+    @include grid(grid,1,1rem);
+
+}
+.part{
+    width: 100%;
+    @include grid(grid,2,.5rem);
+    padding: 1.875rem;
+    transition: all .2s;
+}
+.part:hover{
+    background-color: map-get($color,'extra');
+}
+.p__part{
+    text-align: center;
+    align-self: center;
+}
+.part__info{
+    @include flex(flex,column,nowrap,center,start);
+    gap: 1rem;
+}
+.p__cont_info{
+    color: map-get($color,'gris');
+}
+.a__link{
+    color: map-get($color,'second');
+    transition: all .4s;
+}
+.a__link:hover{
+    transform: translateX(10%);
+}
+/*SECTION__BACK*/
+.back__contact{
+    @include flex(flex,row,nowrap,center,center);
+    background-image: url(../image/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.a__contact{
+    background-color: map-get($color,'bk_2');
+    text-align: center;
+    margin: 6.25rem;
+    padding: .625rem 2.5rem;
+    color: map-get($color,'letra');
+    transition: all .4s;
+    @include responsive(750px){
+        margin: 5rem;
+    };
+    @include responsive(530px){
+        margin: 3.75rem;
+    };
+}
+.a__contact:hover{
+    transform: scale(1.05);
+}
+/*SECTION__COMMENTS*/
+.comments{
+    background-color: map-get($color,'bk_1');
+}
+.h2__comments{
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+.swp__content{
+    @include grid(grid,2,1rem);
+    padding: 5rem;
+    @include responsive(1140px){
+        padding: 3.75rem;
+    };
+    @include responsive(1000px){
+        @include grid(grid,1,1rem);
+    };
+}
+.fig__profile{
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    @include responsive(1000px){
+        max-width: 50%;
+    };
+    @include responsive(750px){
+        max-width: 65%;
+    };
+}
+.img__profile{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.bio{
+    @include flex(flex,column,nowrap,center,start);
+    gap: 1rem;
+}
+.swiper-button-next, .swiper-button-prev{
+    color: rgb(185, 255, 44);
+}
+/*SECTION__CONTACT*/
+.contact{
+    background-color: map-get($color,'bk_2');
+}
+.h2__contact{
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+.form__content{
+    @include flex(flex,row,nowrap,center,center);
+}
+.form{
+    @include flex(flex,column,nowrap,center,start);
+    gap: 1rem;
+    width: 60%;
+    background-color: rgba(0,0,0,0.4);
+    padding: 1.875rem;
+    border-radius: .625rem;
+    @include responsive(750px){
+        width: 80%;
+        padding: 1.25rem;
+    };
+    @include responsive(530px){
+        width: 100%;
+        padding: .9375rem;
+    };
+}
+.label{
+    cursor: pointer;
+}
+.caja{
+    width: 100%;
+    padding: .3125rem;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: .0625rem solid map-get($color,'extra');
+    transition: all .4s;
+    color: map-get($color,'gris');
+}
+.caja:focus{
+    border-bottom: .0625rem solid map-get($color,'second');
+}
+.txt{
+    border: .0625rem solid map-get($color,'extra');
+    border-radius: .3125rem;
+    resize: none;
+}
+.txt:focus{
+    border: .0625rem solid map-get($color,'second');
+}
+.boton{
+    display: block;
+    margin: .625rem auto;
+}
+/*FOOTER*/
+.footer{
+    background-color: #000;
+}
+.img__footer{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1.25rem;
+    transition: all .4s;
+    @include responsive(530px){
+        width: 1.875rem;
+        height: 1.875rem;
+    };
+}
+.img__footer:hover{
+    transform: translateY(-10%);
+}
+.footer__content{
+    @include flex(flex,column,nowrap,center,center);
+}

@@ -1,0 +1,12 @@
+@import 'responsive';
+@mixin flex($flex,$rowcolumn,$wrap,$vertical,$horizontal){
+    display: $flex;
+    flex-flow: $rowcolumn $wrap;
+    justify-content: $vertical;
+    align-items: $horizontal;
+}
+@mixin grid($grid,$num,$gap){
+    display: $grid;
+    grid-template-columns: repeat($num,1fr);
+    gap: $gap;
+}
